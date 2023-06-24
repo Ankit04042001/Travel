@@ -1,0 +1,46 @@
+@use './base.sass'
+
+.contact
+    margin-top : 2rem
+    padding : 2px
+
+    @include base.desktop 
+        margin : 3rem auto
+        width : 90%
+
+    h1
+        margin : 0 auto
+        padding : 10px 0px
+        width : fit-content
+        text-align: center
+        color : #fff
+        border-bottom : 1px solid rgba(255, 255, 255, 0.8)
+
+    form
+        margin-top : 2rem
+
+        .form-label
+            margin : 10px 0px
+            color : #fff
+
+        .form-control
+            border : none
+            background-color : rgba(0, 0, 0, 0.2)
+            color : #fff
+
+            &:focus
+                border : 0.5px solid rgba(0, 0, 0, 0.4)
+                box-shadow : 0 0 0 0.25rem rgba(255, 255, 255, .1)
+
+        .btn-secondary
+            background-color : rgba(0, 0, 0, 0.4)
+
+
+
+    .other-contact
+        @include base.tablet 
+            display : flex
+            justify-content : space-between
+        .phone, .mail
+            margin-top : 3rem
+            color : #fff

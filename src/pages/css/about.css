@@ -1,0 +1,45 @@
+.about-heading {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.people-experience h1 {
+  margin: 50px 0px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+.people-experience ul {
+  margin: 0;
+  padding: 0;
+}
+.people-experience ul li {
+  list-style: none;
+  padding: 10px;
+}
+.people-experience ul li .card img {
+  display: block;
+  width: 100%;
+}
+.people-experience ul li .card .card-img-top {
+  margin: 2px auto;
+  width: 30%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.people-experience ul li .card .card-title {
+  text-align: center;
+}
+.people-experience ul li .card .card-title span {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=about.css.map */

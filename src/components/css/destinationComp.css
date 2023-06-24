@@ -1,0 +1,12 @@
+.destination {
+  padding: 5px;
+}
+.destination a {
+  text-decoration: none;
+}
+.destination a .card-img-top {
+  width: 100%;
+  aspect-ratio: 4/3;
+}
+
+/*# sourceMappingURL=destinationComp.css.map */

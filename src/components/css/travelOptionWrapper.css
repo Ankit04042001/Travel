@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+  .travel-option {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.travel-option h2 {
+  margin: 20px 5px 10px 5px;
+  color: #fff;
+}
+
+/*# sourceMappingURL=travelOptionWrapper.css.map */

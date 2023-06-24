@@ -1,0 +1,33 @@
+@use './base.sass'
+
+.destination-desc
+    h1
+        margin : 3rem auto
+        margin-bottom : 1.2rem
+        padding : 10px 0px
+        width: fit-content
+        text-align: center
+        color : #fff
+        border-bottom : 1px solid rgba(255, 255, 255, 0.8)
+
+        @include base.tablet 
+            margin : 5rem auto
+            margin-bottom : 2.3rem
+
+    .image
+        margin : 10px auto
+        width : 100%
+        aspect-ratio: 4/3
+
+        @include base.tablet 
+            width : 50%
+            float : left
+            margin-right : 20px
+
+        img
+            display : block
+            width : 100%
+            height : 100%
+
+    p
+        color : #fff
