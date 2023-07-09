@@ -1,20 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import './css/home.css'
-import image1 from '../images/image1.jpg'
-import image2 from '../images/image2.jpg'
-import image3 from '../images/image3.jpg'
-import image4 from '../images/image4.jpg'
-import image5 from '../images/image5.jpg'
 import ManyMore from '../components/ManyMore'
 import DestinationComp from '../components/DestinationComp'
 import Footer from '../components/Footer'
 import Background from '../components/Background';
+import { baseURI } from '../utils'
+import axios from 'axios'
+
 
 function Home() {
+  interface Dest {
+    id: number,
+    name: string,
+    image: string,
+    fare: number,
+    description: string
+  }
+
+  const InitialDest: Dest[] = [{ id: 0, name: '', image: '', fare: 0, description: '' }]
+
+  const [dest, setDest] = useState(InitialDest)
+  const fetchDestination = async () => {
+    const res = await axios.get(`${baseURI}/destinations/`);
+    let destinations = []
+    for(let category in res.data){
+      destinations.push(res.data[category])
+    }
+    destinations = destinations.flat()
+
+    let arr = []
+    for(let i=0;i<5;i++){
+      arr.push(destinations[i]);
+    }
+    setDest(arr);
+  }
+
+  useEffect(() => {
+    fetchDestination()
+  }, [])
+
+
   return (
     <div>
-      <Background image={true}/>
+      <Background image={true} />
       <Header />
       <div className='heading'>
         <h1>Explore Incredible India: Journey through Time, Culture, and Natural Splendors.</h1>
@@ -23,12 +52,12 @@ function Home() {
         <h2>Destinations</h2>
         <div className='container'>
           <div className='row'>
-            <DestinationComp link='/destinationDesc' img={image1} location='Mumbai' fare={1199} />
-            <DestinationComp link='/destinationDesc' img={image2} location='Mumbai' fare={1199} />
-            <DestinationComp link='/destinationDesc' img={image3} location='Mumbai' fare={1199} />
-            <DestinationComp link='/destinationDesc' img={image4} location='Mumbai' fare={1199} />
-            <DestinationComp link='/destinationDesc' img={image5} location='Mumbai' fare={1199} />
-            <ManyMore link='destination'/>
+            {dest ? dest.map(dest => {
+              return (
+                <DestinationComp key={dest.id} link={'/destinationDesc/' + dest.id} img={dest.image} location={dest.name} fare={dest.fare} />
+              )
+            }) : <div></div>}
+            <ManyMore link='destination' />
           </div>
         </div>
       </section>
